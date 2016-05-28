@@ -1,11 +1,14 @@
 package com.zzh.androidtrainingdemo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -121,6 +124,46 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG,s);
             }
         }.execute();
+
+        //与其他App交互
+
+
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("tel:13981010266");
+                Intent callIntent = new Intent(Intent.ACTION_DIAL,uri);
+                Intent chooser =  Intent.createChooser(callIntent,"打电话");
+                if (callIntent.resolveActivity(getPackageManager())!=null){
+                    startActivity(chooser);
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
