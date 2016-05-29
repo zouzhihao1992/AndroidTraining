@@ -1,1 +1,1 @@
-include ':Support_Different_Devices', ':Demo'
+include ':contentsharinga', ':contentsharingb' ,':Support_Different_Devices',':Demo'
