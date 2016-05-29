@@ -1,1 +1,1 @@
-include ':Support_Different_Devices'
+include ':Support_Different_Devices', ':Demo'
